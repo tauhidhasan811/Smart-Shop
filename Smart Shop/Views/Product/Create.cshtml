@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<form method="post" >
+    <table>
+        <tr>
+            <td>Product Name: </td>
+            <td> <input type="text" value=@Model.Name name="Name" /></td>
+        </tr>
+        <tr>
+            <td>Product Quentity: </td>
+            <td> <input type="text" value=@Model.Quantity name="Quantity"/></td>
+        </tr>
+        <tr>
+            <td>Product Price: </td>
+            <td> <input type="text" value=@Model.Price name="Price"/></td>
+        </tr>
+        <tr>
+            <td>Product Description: </td>
+            <td> <input type="text" value=@Model.Description name="Description" /></td>
+        </tr>
+        <tr>
+            <td> <input type="submit" class="btn btn-primary" /></td>
+        </tr>
+    </table>
+</form>
+

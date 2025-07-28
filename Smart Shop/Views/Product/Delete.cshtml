@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+}
+
+<form method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <h3>Are you sure you want to delete @Model.Name </h3>
+    <input type="submit" class="btn btn-danger" name="submit" value="Yes" />
+    <input type="submit" class="btn btn-primary" name="submit" value="No" />
+
+    <input type="submit" class="btn btn-primary" name="submit" value="Nsdo" />
+</form>
+
