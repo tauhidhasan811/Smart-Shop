@@ -19,5 +19,6 @@ namespace Smart_Shop.Database
         public decimal Price { get; set; }
         public string Description { get; set; }
         public decimal Quantity { get; set; }
+        public string Photo { get; set; }
     }
 }

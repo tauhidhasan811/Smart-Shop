@@ -3,17 +3,69 @@
     ViewBag.Title = "Index";
 }
 
-<table class="table table-bordered" >
-    <tr>
-        <th> Id </th>
-        <th> Name </th>
-        <th> Price </th>
-        <th> Quantity </th>
-        <th> Description</th>
-        <th> Edit </th>
-        <th> Delete</th>
-    </tr>
-    @foreach( var item in Model)
+<h3 style="color:red;">@ViewBag.ImageError</h3>
+@*
+    @foreach (var item in Model)
+    {
+        <div>
+            <a href="@Url.Action("Details", "Product", new {id=item.Id})">
+                <div calss="d-flex justify-content-center">
+                    <img src="@Url.Action("DisplayImage", "Product", new {imageName=item.Photo})" width="100" height="100" />
+                </div>
+                <div>
+                    @item.Id
+                 </div>
+                <div>
+                    @item.Name
+                </div>
+                <div>
+                    <p>@item.Price</p>
+                    <p>@item.Quantity</p>
+                </div>
+            </a>
+        </div>
+    } *@
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-6 col-sm-4 col-md-2 mb-4">
+                <div class="card h-100 text-center">
+                    <a href="@Url.Action("Details", "Product", new { id = item.Id })" class="text-decoration-none text-dark">
+
+                        <img src="@Url.Action("DisplayImage", "Product", new { imageName = item.Photo })"
+                             class="card-img-top mx-auto d-block mt-3"
+                             style=" height: 100px;" alt="Product Image" />
+                        <div class="card-body">
+                            <h6 class="card-title">ID: @item.Id</h6>
+                            <p class="card-text">Name: @item.Name</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <span>Price: @item.Price</span>
+                                <span>Qty: @item.Quantity</span>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+@*
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th> Id </th>
+                <th> Name </th>
+                <th> Price </th>
+                <th> Quantity </th>
+                <th> Description</th>
+                <th> Image</th>
+                <th>Details</th>
+
+            </tr>
+            @foreach (var item in Model)
             {
                 <tr>
                     <td> @item.Id</td>
@@ -21,8 +73,14 @@
                     <td> @item.Price</td>
                     <td> @item.Quantity</td>
                     <td> @item.Description</td>
-                    <td> <a href=@Url.Action("Edit", "Product", new {id = item.Id})>Edit</a></td>
-                    <td> <a href=@Url.Action("Delete", "Product", new {id = item.Id})>Delete</a></td>
-                </tr>
-            }
-</table>
+
+                    <td> <img src="@Url.Action("DisplayImage", "Product", new { imageName = item.Photo })" width="100" height="100" /></td>
+                    @*<td>
+                    <img src="@Url.Action("DisplayImage", "Product", new { imageName = item.Photo })" width="100" height="100" />
+                </td>
+    <td> <a href="@Url.Action("Details" , "Product" , new { id = item.Id })">Details</a> </td>
+
+            </tr>
+        }
+    </table>
+*@

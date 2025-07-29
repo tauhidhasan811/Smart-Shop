@@ -3,44 +3,32 @@
   "WorkspaceRootPath": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|d:\\aiub\\semester 11\\mid\\advanced programming with .net\\lab\\smart shop\\smart shop\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\views\\product\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\views\\product\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\database\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\database\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|d:\\aiub\\semester 11\\mid\\advanced programming with .net\\lab\\smart shop\\smart shop\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|d:\\aiub\\semester 11\\mid\\advanced programming with .net\\lab\\smart shop\\smart shop\\views\\product\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\views\\product\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\database\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\database\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|d:\\aiub\\semester 11\\mid\\advanced programming with .net\\lab\\smart shop\\smart shop\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|solutionrelative:smart shop\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5995158-92E1-41B0-A62F-EA8BDE4B5577}|Smart Shop\\Smart Shop.csproj|D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\smart shop\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -58,80 +46,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Index.cshtml",
-              "RelativeDocumentMoniker": "Smart Shop\\Views\\Product\\Index.cshtml",
-              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Index.cshtml",
-              "RelativeToolTip": "Smart Shop\\Views\\Product\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-28T16:12:51.375Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Smart Shop\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Smart Shop\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAIwC4AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T15:50:04.784Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Details.cshtml",
+              "RelativeDocumentMoniker": "Smart Shop\\Views\\Product\\Details.cshtml",
+              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Details.cshtml",
+              "RelativeToolTip": "Smart Shop\\Views\\Product\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-29T07:28:58.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Delete.cshtml",
               "RelativeDocumentMoniker": "Smart Shop\\Views\\Product\\Delete.cshtml",
               "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Delete.cshtml",
               "RelativeToolTip": "Smart Shop\\Views\\Product\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-28T16:34:12.289Z"
+              "WhenOpened": "2025-07-29T07:09:56.875Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Smart Shop\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Smart Shop\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAoAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "Smart Shop\\Views\\Product\\Index.cshtml",
+              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Index.cshtml*",
+              "RelativeToolTip": "Smart Shop\\Views\\Product\\Index.cshtml*",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwCUAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-28T15:48:44.403Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Model1.Context.cs",
-              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Database\\Model1.Context.cs",
-              "RelativeDocumentMoniker": "Smart Shop\\Database\\Model1.Context.cs",
-              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Database\\Model1.Context.cs",
-              "RelativeToolTip": "Smart Shop\\Database\\Model1.Context.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAIwBsAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T16:07:00.922Z"
+              "WhenOpened": "2025-07-29T06:00:20.106Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "Smart Shop\\Views\\Product\\Create.cshtml",
+              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "Smart Shop\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-28T15:51:54.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Smart Shop\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Smart Shop\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAApwHwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T05:29:22.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Database\\Product.cs",
               "RelativeDocumentMoniker": "Smart Shop\\Database\\Product.cs",
               "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Database\\Product.cs",
               "RelativeToolTip": "Smart Shop\\Database\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T16:03:28.695Z"
+              "WhenOpened": "2025-07-29T05:31:46.105Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -141,49 +138,14 @@
               "RelativeDocumentMoniker": "Smart Shop\\Views\\Product\\Edit.cshtml",
               "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Edit.cshtml",
               "RelativeToolTip": "Smart Shop\\Views\\Product\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-28T16:28:35.346Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FilterConfig.cs",
-              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\App_Start\\FilterConfig.cs",
-              "RelativeDocumentMoniker": "Smart Shop\\App_Start\\FilterConfig.cs",
-              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\App_Start\\FilterConfig.cs",
-              "RelativeToolTip": "Smart Shop\\App_Start\\FilterConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T16:09:16.984Z"
+              "WhenOpened": "2025-07-28T16:28:35.346Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Create.cshtml",
-              "RelativeDocumentMoniker": "Smart Shop\\Views\\Product\\Create.cshtml",
-              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Product\\Create.cshtml",
-              "RelativeToolTip": "Smart Shop\\Views\\Product\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-28T15:51:54.196Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RouteConfig.cs",
-              "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\App_Start\\RouteConfig.cs",
-              "RelativeDocumentMoniker": "Smart Shop\\App_Start\\RouteConfig.cs",
-              "ToolTip": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\App_Start\\RouteConfig.cs",
-              "RelativeToolTip": "Smart Shop\\App_Start\\RouteConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T15:49:18.753Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "Error.cshtml",
               "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Smart Shop\\Views\\Shared\\Error.cshtml",
@@ -195,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\AIUB\\SEMESTER 11\\MID\\ADVANCED PROGRAMMING WITH .NET\\LAB\\Smart Shop\\Smart Shop\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Smart Shop\\Views\\_ViewStart.cshtml",

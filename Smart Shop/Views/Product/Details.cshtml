@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<td> <a href=@Url.Action("Edit", "Product", new {id = Model.Id}) class="btn btn-primary p-2">Edit</a></td>
+<td> <a href=@Url.Action("Delete", "Product", new {id = Model.Id}) class="btn btn-danger ">Delete</a></td>
+
+<div>
+    <div>
+        <p> Product Id: @Model.Id</p>
+        <p> Product Name: @Model.Name</p>
+    </div>
+    <div>
+        <img src="@Url.Action("DisplayImage", "Product", new {imageName= Model.Photo})" width="100" height="100" />
+    </div>
+</div>
+</div>
+

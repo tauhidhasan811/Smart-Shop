@@ -9,6 +9,7 @@
     <Property Name="Quantity" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Price" Type="numeric" Precision="18" Scale="0" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Photo" Type="varchar(max)" />
   </EntityType>
   <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
