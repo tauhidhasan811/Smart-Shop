@@ -10,8 +10,86 @@
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Details" Relationship="Model.FK_Details_Products" FromRole="Product" ToRole="Detail" />
   </EntityType>
   <EntityContainer Name="Smart_ShopEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Details" EntityType="Model.Detail" />
+    <EntitySet Name="Orders" EntityType="Model.Order" />
+    <AssociationSet Name="FK_Details_Orders" Association="Model.FK_Details_Orders">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Detail" EntitySet="Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_Products" Association="Model.FK_Details_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Detail" EntitySet="Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Order" Association="Model.FK_Orders_Order">
+      <End Role="Detail" EntitySet="Details" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Detail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quentity" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ProdID" Type="Int32" Nullable="false" />
+    <Property Name="OrdID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Model.FK_Details_Orders" FromRole="Detail" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="Model.FK_Details_Products" FromRole="Detail" ToRole="Product" />
+    <NavigationProperty Name="Orders" Relationship="Model.FK_Orders_Order" FromRole="Detail" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="DtlID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Details" Relationship="Model.FK_Details_Orders" FromRole="Order" ToRole="Detail" />
+    <NavigationProperty Name="Detail" Relationship="Model.FK_Orders_Order" FromRole="Order" ToRole="Detail" />
+  </EntityType>
+  <Association Name="FK_Details_Orders">
+    <End Type="Model.Order" Role="Order" Multiplicity="1" />
+    <End Type="Model.Detail" Role="Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Detail">
+        <PropertyRef Name="OrdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_Products">
+    <End Type="Model.Product" Role="Product" Multiplicity="1" />
+    <End Type="Model.Detail" Role="Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Detail">
+        <PropertyRef Name="ProdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Order">
+    <End Type="Model.Detail" Role="Detail" Multiplicity="1" />
+    <End Type="Model.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Detail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="DtlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

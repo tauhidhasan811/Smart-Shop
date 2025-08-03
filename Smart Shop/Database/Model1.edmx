@@ -5,6 +5,28 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Quentity" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Price" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Total" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ProdID" Type="int" Nullable="false" />
+          <Property Name="OrdID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DtlID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Products">
           <Key>
             <PropertyRef Name="Id" />
@@ -16,8 +38,58 @@
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Photo" Type="varchar(max)" />
         </EntityType>
+        <Association Name="FK_Details_Orders">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Details" Type="Self.Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Details">
+              <PropertyRef Name="OrdID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="Details" Type="Self.Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Details">
+              <PropertyRef Name="ProdID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Order">
+          <End Role="Details" Type="Self.Details" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Details">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DtlID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Details" EntityType="Self.Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Details_Orders" Association="Self.FK_Details_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Details" EntitySet="Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_Products" Association="Self.FK_Details_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Details" EntitySet="Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Order" Association="Self.FK_Orders_Order">
+            <End Role="Details" EntitySet="Details" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -33,10 +105,88 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Details" Relationship="Model.FK_Details_Products" FromRole="Product" ToRole="Detail" />
         </EntityType>
         <EntityContainer Name="Smart_ShopEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Details" EntityType="Model.Detail" />
+          <EntitySet Name="Orders" EntityType="Model.Order" />
+          <AssociationSet Name="FK_Details_Orders" Association="Model.FK_Details_Orders">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Detail" EntitySet="Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_Products" Association="Model.FK_Details_Products">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Detail" EntitySet="Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Order" Association="Model.FK_Orders_Order">
+            <End Role="Detail" EntitySet="Details" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Quentity" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ProdID" Type="Int32" Nullable="false" />
+          <Property Name="OrdID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Model.FK_Details_Orders" FromRole="Detail" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="Model.FK_Details_Products" FromRole="Detail" ToRole="Product" />
+          <NavigationProperty Name="Orders" Relationship="Model.FK_Orders_Order" FromRole="Detail" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="DtlID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Details" Relationship="Model.FK_Details_Orders" FromRole="Order" ToRole="Detail" />
+          <NavigationProperty Name="Detail" Relationship="Model.FK_Orders_Order" FromRole="Order" ToRole="Detail" />
+        </EntityType>
+        <Association Name="FK_Details_Orders">
+          <End Type="Model.Order" Role="Order" Multiplicity="1" />
+          <End Type="Model.Detail" Role="Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Detail">
+              <PropertyRef Name="OrdID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Details_Products">
+          <End Type="Model.Product" Role="Product" Multiplicity="1" />
+          <End Type="Model.Detail" Role="Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Detail">
+              <PropertyRef Name="ProdID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Order">
+          <End Type="Model.Detail" Role="Detail" Multiplicity="1" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Detail">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="DtlID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -52,6 +202,30 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Details">
+            <EntityTypeMapping TypeName="Model.Detail">
+              <MappingFragment StoreEntitySet="Details">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="OrdID" ColumnName="OrdID" />
+                <ScalarProperty Name="ProdID" ColumnName="ProdID" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quentity" ColumnName="Quentity" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="Model.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="DtlID" ColumnName="DtlID" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

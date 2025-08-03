@@ -44,6 +44,9 @@
                                 <span>Qty: @item.Quantity</span>
                             </div>
                         </div>
+                        <div>
+                            <a href="@Url.Action("AddCart", "Product", new {id=item.Id})">Add Cart</a>
+                        </div>
 
                     </a>
                 </div>

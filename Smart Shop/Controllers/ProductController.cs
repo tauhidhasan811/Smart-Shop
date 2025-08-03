@@ -22,6 +22,27 @@ namespace Smart_Shop.Controllers
         {
             return View(new Product());
         }
+        public ActionResult AddCart(int id)
+        {
+            var product = db.Products.Find(id);
+            List<Product> products = null;
+            if (Session["cart"] == null)
+            {
+                products = new List<Product>();
+            }
+            else
+            {
+                products = (List<Product>)Session["cart"];
+            }
+            products.Add(product);
+            Session["cart"] = products;
+            return RedirectToAction("Index");
+        }
+        public ActionResult Cart()
+        {
+            var Product = Session["cart"];
+            return View(Product);
+        }
         /*
         [HttpPost]
         public ActionResult Create(Product product, HttpPostedFileBase Image)

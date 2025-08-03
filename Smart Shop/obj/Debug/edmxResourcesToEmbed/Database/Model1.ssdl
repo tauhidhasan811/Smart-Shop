@@ -1,5 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Quentity" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Price" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Total" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ProdID" Type="int" Nullable="false" />
+    <Property Name="OrdID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DtlID" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Products">
     <Key>
       <PropertyRef Name="Id" />
@@ -11,7 +33,57 @@
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Photo" Type="varchar(max)" />
   </EntityType>
+  <Association Name="FK_Details_Orders">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="Details" Type="Self.Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Details">
+        <PropertyRef Name="OrdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Details_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Details" Type="Self.Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Details">
+        <PropertyRef Name="ProdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Order">
+    <End Role="Details" Type="Self.Details" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="DtlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Details" EntityType="Self.Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Details_Orders" Association="Self.FK_Details_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Details" EntitySet="Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Details_Products" Association="Self.FK_Details_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Details" EntitySet="Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Order" Association="Self.FK_Orders_Order">
+      <End Role="Details" EntitySet="Details" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

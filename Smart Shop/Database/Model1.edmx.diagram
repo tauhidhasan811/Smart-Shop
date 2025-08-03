@@ -6,6 +6,11 @@
     <edmx:Diagrams>
       <Diagram DiagramId="3e2023d6bfc64baa94042ff07691840a" Name="Diagram1">
         <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Detail" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="0.75" PointY="4.75" />
+        <AssociationConnector Association="Model.FK_Details_Orders" />
+        <AssociationConnector Association="Model.FK_Details_Products" />
+        <AssociationConnector Association="Model.FK_Orders_Order" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

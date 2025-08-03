@@ -26,5 +26,7 @@ namespace Smart_Shop.Database
         }
     
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Detail> Details { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
     }
 }

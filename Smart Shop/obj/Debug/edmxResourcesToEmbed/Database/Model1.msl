@@ -13,5 +13,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Details">
+      <EntityTypeMapping TypeName="Model.Detail">
+        <MappingFragment StoreEntitySet="Details">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OrdID" ColumnName="OrdID" />
+          <ScalarProperty Name="ProdID" ColumnName="ProdID" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quentity" ColumnName="Quentity" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="Model.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="DtlID" ColumnName="DtlID" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
