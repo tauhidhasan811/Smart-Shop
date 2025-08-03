@@ -1,4 +1,6 @@
-﻿using Smart_Shop.Database;
+﻿using AutoMapper;
+using Smart_Shop.Database;
+using Smart_Shop.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +12,16 @@ namespace Smart_Shop.Controllers
 {
     public class ProductController : Controller
     {
+        public Mapper GetMapper()
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Product, ProductDTO>().ReverseMap();
+            });
+
+            return new Mapper(config);
+        }
+
         Smart_ShopEntities1 db = new Smart_ShopEntities1();
         // GET: Product
         public ActionResult Index()
@@ -24,15 +36,17 @@ namespace Smart_Shop.Controllers
         }
         public ActionResult AddCart(int id)
         {
-            var product = db.Products.Find(id);
-            List<Product> products = null;
+            var data = db.Products.Find(id);
+            
+            var product = GetMapper().Map<ProductDTO>(data);
+            List<ProductDTO> products = null;
             if (Session["cart"] == null)
             {
-                products = new List<Product>();
+                products = new List<ProductDTO>();
             }
             else
             {
-                products = (List<Product>)Session["cart"];
+                products = (List<ProductDTO>)Session["cart"];
             }
             products.Add(product);
             Session["cart"] = products;
@@ -115,11 +129,23 @@ namespace Smart_Shop.Controllers
             string contentType = MimeMapping.GetMimeMapping(path);
             return File(path, contentType);
         }
-
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             var product = db.Products.Find(id);
+
             return View(product);
+        }
+        [HttpPost]
+        public ActionResult Edit(Product product)
+        {
+            product.Name = Request.Form["Name"];
+            product.Price = Convert.ToDecimal(Request.Form["Price"]);
+            product.Description = Request.Form["Description"];
+            product.Quantity = Convert.ToDecimal(Request.Form["Quantity"]);
+
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public ActionResult Delete(int id)
