@@ -4,24 +4,43 @@
 }
 
 <h2>Cart</h2>
+@{ decimal totalPrice = 0;
+    decimal unitTotlal = 0;
+    }
 
-<table>
+<table class="table table-bordered">
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Quantity</th>
         <th>Price</th>
+        <th>Unit Total</th>
     </tr>
-    @foreach (var item in Model)
+    @if(Model != null)
     {
+        foreach (var item in Model)
+        {
+            {
+                unitTotlal = item.Quantity * item.Price;
+                totalPrice += unitTotlal;
+            }
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price</td>
+                <td>@unitTotlal</td>
+            </tr>
+        }
         <tr>
-            <td>@item.Id</td>
-            <td>@item.Name</td>
-            <td>@item.Quantity</td>
-            <td>@item.Price</td>
-        </tr>
+            <td class="text-right" colspan="3">Total</td>
+            <td>@totalPrice</td>
 
+        </tr>
     }
+
+
+
 </table>
 
 

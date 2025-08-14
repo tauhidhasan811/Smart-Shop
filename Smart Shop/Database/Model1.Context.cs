@@ -13,10 +13,10 @@ namespace Smart_Shop.Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Smart_ShopEntities1 : DbContext
+    public partial class Smart_ShopEntities2 : DbContext
     {
-        public Smart_ShopEntities1()
-            : base("name=Smart_ShopEntities1")
+        public Smart_ShopEntities2()
+            : base("name=Smart_ShopEntities2")
         {
         }
     
@@ -25,8 +25,10 @@ namespace Smart_Shop.Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Detail> Details { get; set; }
+        public virtual DbSet<CustomerProduct> CustomerProducts { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<OrderProduct> OrderProducts { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 }

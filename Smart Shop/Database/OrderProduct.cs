@@ -12,22 +12,14 @@ namespace Smart_Shop.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class OrderProduct
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
-        {
-            this.CustomerProducts = new HashSet<CustomerProduct>();
-        }
-    
         public int Id { get; set; }
         public string Name { get; set; }
         public double Quantity { get; set; }
         public double Price { get; set; }
-        public string Description { get; set; }
-        public string Photo { get; set; }
+        public int OrderId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CustomerProduct> CustomerProducts { get; set; }
+        public virtual Order Order { get; set; }
     }
 }

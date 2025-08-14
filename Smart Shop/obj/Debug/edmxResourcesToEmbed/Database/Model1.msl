@@ -1,39 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Smart_ShopEntities1">
-    <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="Model.Product">
-        <MappingFragment StoreEntitySet="Products">
-          <ScalarProperty Name="Photo" ColumnName="Photo" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Smart_ShopEntities2">
+    <EntitySetMapping Name="CustomerProducts">
+      <EntityTypeMapping TypeName="Model.CustomerProduct">
+        <MappingFragment StoreEntitySet="CustomerProducts">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CusId" ColumnName="CusId" />
+          <ScalarProperty Name="ProdId" ColumnName="ProdId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Details">
-      <EntityTypeMapping TypeName="Model.Detail">
-        <MappingFragment StoreEntitySet="Details">
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="OrdID" ColumnName="OrdID" />
-          <ScalarProperty Name="ProdID" ColumnName="ProdID" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Quentity" ColumnName="Quentity" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="Model.Customer">
+        <MappingFragment StoreEntitySet="Customers">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderProducts">
+      <EntityTypeMapping TypeName="Model.OrderProduct">
+        <MappingFragment StoreEntitySet="OrderProducts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="Model.Order">
         <MappingFragment StoreEntitySet="Orders">
-          <ScalarProperty Name="DtlID" ColumnName="DtlID" />
-          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="CusId" ColumnName="CusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="Model.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

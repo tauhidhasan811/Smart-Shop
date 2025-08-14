@@ -1,49 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Product">
+  <EntityType Name="CustomerProduct">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-    <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Details" Relationship="Model.FK_Details_Products" FromRole="Product" ToRole="Detail" />
-  </EntityType>
-  <EntityContainer Name="Smart_ShopEntities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Products" EntityType="Self.Product" />
-    <EntitySet Name="Details" EntityType="Model.Detail" />
-    <EntitySet Name="Orders" EntityType="Model.Order" />
-    <AssociationSet Name="FK_Details_Orders" Association="Model.FK_Details_Orders">
-      <End Role="Order" EntitySet="Orders" />
-      <End Role="Detail" EntitySet="Details" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Details_Products" Association="Model.FK_Details_Products">
-      <End Role="Product" EntitySet="Products" />
-      <End Role="Detail" EntitySet="Details" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Orders_Order" Association="Model.FK_Orders_Order">
-      <End Role="Detail" EntitySet="Details" />
-      <End Role="Order" EntitySet="Orders" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Detail">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Quentity" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-    <Property Name="ProdID" Type="Int32" Nullable="false" />
-    <Property Name="OrdID" Type="Int32" Nullable="false" />
+    <Property Name="CusId" Type="Int32" Nullable="false" />
+    <Property Name="ProdId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Order" Relationship="Model.FK_Details_Orders" FromRole="Detail" ToRole="Order" />
-    <NavigationProperty Name="Product" Relationship="Model.FK_Details_Products" FromRole="Detail" ToRole="Product" />
-    <NavigationProperty Name="Orders" Relationship="Model.FK_Orders_Order" FromRole="Detail" ToRole="Order" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_CustomerProducts_Customers" FromRole="CustomerProducts" ToRole="Customers" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_CustomerProducts_Products" FromRole="CustomerProducts" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CustomerProducts" Relationship="Self.FK_CustomerProducts_Customers" FromRole="Customers" ToRole="CustomerProducts" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Customers" FromRole="Customers" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="OrderProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Double" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_OrderProducts_OrderProducts" FromRole="OrderProducts" ToRole="Orders" />
   </EntityType>
   <EntityType Name="Order">
     <Key>
@@ -51,45 +42,92 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-    <Property Name="DtlID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Details" Relationship="Model.FK_Details_Orders" FromRole="Order" ToRole="Detail" />
-    <NavigationProperty Name="Detail" Relationship="Model.FK_Orders_Order" FromRole="Order" ToRole="Detail" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CusId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Orders_Customers" FromRole="Orders" ToRole="Customers" />
+    <NavigationProperty Name="OrderProducts" Relationship="Self.FK_OrderProducts_OrderProducts" FromRole="Orders" ToRole="OrderProducts" />
   </EntityType>
-  <Association Name="FK_Details_Orders">
-    <End Type="Model.Order" Role="Order" Multiplicity="1" />
-    <End Type="Model.Detail" Role="Detail" Multiplicity="*" />
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Double" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CustomerProducts" Relationship="Self.FK_CustomerProducts_Products" FromRole="Products" ToRole="CustomerProducts" />
+  </EntityType>
+  <Association Name="FK_CustomerProducts_Customers">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+    <End Role="CustomerProducts" Type="Self.CustomerProduct" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Order">
+      <Principal Role="Customers">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Detail">
-        <PropertyRef Name="OrdID" />
+      <Dependent Role="CustomerProducts">
+        <PropertyRef Name="CusId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Details_Products">
-    <End Type="Model.Product" Role="Product" Multiplicity="1" />
-    <End Type="Model.Detail" Role="Detail" Multiplicity="*" />
+  <Association Name="FK_CustomerProducts_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="CustomerProducts" Type="Self.CustomerProduct" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Product">
+      <Principal Role="Products">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Detail">
-        <PropertyRef Name="ProdID" />
+      <Dependent Role="CustomerProducts">
+        <PropertyRef Name="ProdId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Orders_Order">
-    <End Type="Model.Detail" Role="Detail" Multiplicity="1" />
-    <End Type="Model.Order" Role="Order" Multiplicity="*" />
+  <Association Name="FK_Orders_Customers">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Detail">
+      <Principal Role="Customers">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="DtlID" />
+      <Dependent Role="Orders">
+        <PropertyRef Name="CusId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_OrderProducts_OrderProducts">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="OrderProducts" Type="Self.OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderProducts">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Smart_ShopEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CustomerProducts" EntityType="Self.CustomerProduct" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="OrderProducts" EntityType="Self.OrderProduct" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <AssociationSet Name="FK_CustomerProducts_Customers" Association="Self.FK_CustomerProducts_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CustomerProducts" EntitySet="CustomerProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerProducts_Products" Association="Self.FK_CustomerProducts_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="CustomerProducts" EntitySet="CustomerProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Customers" Association="Self.FK_Orders_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderProducts_OrderProducts" Association="Self.FK_OrderProducts_OrderProducts">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderProducts" EntitySet="OrderProducts" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>
